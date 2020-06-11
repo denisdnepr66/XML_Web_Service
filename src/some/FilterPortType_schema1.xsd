@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://some/" xmlns:tns="http://some/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="byDate" type="tns:byDate"/>
+
+  <xs:element name="byDateResponse" type="tns:byDateResponse"/>
+
+  <xs:element name="byLastName" type="tns:byLastName"/>
+
+  <xs:element name="byLastNameResponse" type="tns:byLastNameResponse"/>
+
+  <xs:complexType name="byLastName">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="byLastNameResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:person" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateOfBirth" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="byDate">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="byDateResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:person" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
